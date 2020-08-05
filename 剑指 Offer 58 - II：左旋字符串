@@ -1,0 +1,8 @@
+class Solution {
+public:
+    string reverseLeftWords(string s, int n) {
+        string tmp1 = s.substr(0, n);
+        string tmp2 = s.substr(n, s.size()-n);
+        return tmp2+tmp1;
+    }
+};
