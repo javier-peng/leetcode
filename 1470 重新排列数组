@@ -1,0 +1,25 @@
+//O(n)
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int> result(2 * n, 0);
+        vector<int> X(n, 0);
+        vector<int> Y(n, 0);
+        for (int i=0;i<2*n;i++)
+        {
+            if (i<n)
+            {
+                X[i] = nums[i];
+            }
+            else {
+                Y[i - n] = nums[i];
+            }
+        }
+        for (int i=0;i<n;i++)
+        {
+            result[i + i] = X[i];
+            result[i + i + 1] = Y[i];
+        }
+        return result;
+    }
+};
