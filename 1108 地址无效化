@@ -1,3 +1,4 @@
+//Insert
 class Solution {
 public:
     string defangIPaddr(string address) {
@@ -17,5 +18,25 @@ public:
             }
         }
         return result;
+    }
+};
+
+//Replace
+class Solution {
+public:
+    string defangIPaddr(string address) {
+        int i = 0;
+        while (address[i]!='\0')
+        {
+            if (address[i] == '.')
+            {
+                address.replace(i, 1, "[.]");
+                i = i + 3;
+            }
+            else {
+                i++;
+            }
+        }
+        return address;
     }
 };
